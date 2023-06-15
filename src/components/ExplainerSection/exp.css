@@ -1,0 +1,13 @@
+.exp-card {
+  text-align: center;
+  margin: 1em 10px;
+  padding: 1em 0
+}
+
+.exp-card h1 {
+  padding: 0.5em 0;
+}
+
+.exp-card p {
+  margin: 0 1em;
+}

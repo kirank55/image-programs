@@ -1,0 +1,96 @@
+.homepage-content {
+    text-align: center;
+    padding: 2em 0;
+}
+
+.intro-headline {
+    margin: 3em 0;
+}
+
+.home h2 {
+    text-transform: uppercase;
+
+}
+
+.card-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-grid-container {
+    margin: 3em 0;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.card-grid .card-content {
+    display: grid;
+    place-items: center;
+}
+
+.card-row .card-content {
+    margin: 1em;
+    text-transform: 'uppercase';
+}
+
+
+.card-row .card-content:hover {
+    cursor: pointer;
+}
+
+.card-content .card-link {
+    display: flex;
+    align-items: center;
+    padding: .75em;
+    margin: 1em;
+    justify-content: center;
+    font-size: 19px;
+    max-width: 300px;
+    text-decoration: none;
+
+    box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.75);
+    transition: 0.15s all ease-in-out;
+}
+
+.card-content .card-link:hover {
+
+    background-color: var(--dark-border);
+    color: var(--sec-text);
+}
+
+.card-content .card-link div {
+    margin: 0 0.5rem;
+}
+
+.card-content .card-link:hover .fa-image {
+    transition: 0.25s all ease-in-out;
+}
+
+.card-content .card-link i {
+    color: var(--primary-text);
+}
+
+.card-content .card-link:hover i {
+    color: var(--sec-text);
+}
+
+@media (max-width:1000px) {
+    .card-grid {
+        grid-template-columns: auto auto;
+    }
+}
+
+
+@media (max-width:700px) {
+    .card-grid {
+        grid-template-columns: auto;
+    }
+
+    .card-row {
+        flex-direction: column;
+    }
+}

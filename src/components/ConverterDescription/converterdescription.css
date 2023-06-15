@@ -1,0 +1,7 @@
+.converter-description {
+    padding: 1em 0;
+}
+
+.converter-description p, .converter-description h1 {
+    text-align: center;
+}
