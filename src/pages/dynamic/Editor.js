@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
+import domtoimage from "dom-to-image";
 
 import { preventDefaultAndPropagation } from "../../utilities/functions";
 import { FileContext } from "../../utilities/Context";
@@ -113,18 +114,6 @@ const EditImage = ({ UploadedFiles }) => {
     return { filter: filters.join(" ") };
   }
 
-  //   useEffect(()=>{
-  //         // console.log(imgdiv)
-  //       //   imgdiv.style.backgroundImage = url("blob:http://localhost:3000/161b386f-cc77-4f0e-99eb-717adbcc71e6")
-  //       const imgdiv = document.getElementById('image')
-  //       console.log(imgdiv)
-  //       console.log(imgdiv.style)
-  //       console.log(imgdiv.style.backgroundImage)
-
-  //       imgdiv.style.backgroundImage = `url(${image})`
-
-  //   },[])
-
   const imagediv = useRef(null);
 
   useEffect(() => {
@@ -134,6 +123,35 @@ const EditImage = ({ UploadedFiles }) => {
       imagediv.current.style.backgroundImage = `url(${url})`;
     }
   }, [imagediv]);
+
+  async function DownloadImage() {
+
+    if (imagediv && imagediv.current) {
+      // console.log(imagediv.current);
+
+      const htmlnode = imagediv.current
+      const htmlToImage = window.htmlToImage 
+
+      // const downloadImage = async () => {
+        // }
+        
+        const dataUrl = await htmlToImage.toPng(htmlnode);
+        console.log(dataUrl)
+        
+        const link = document.createElement('a');
+        link.download = 'edited-image.png';
+        link.href = dataUrl;
+
+        link.click();
+
+      };
+
+
+
+
+
+
+  }
 
   return (
     <div className="editor-container">
@@ -145,9 +163,8 @@ const EditImage = ({ UploadedFiles }) => {
             <button
               key={index}
               name={option.name}
-              className={`med-link sidebar-item ${
-                index === selectedOptionIndex ? "active" : ""
-              }`}
+              className={`med-link sidebar-item ${index === selectedOptionIndex ? "active" : ""
+                }`}
               onClick={() => setSelectedOptionIndex(index)}
             >
               {option.name}
@@ -166,6 +183,14 @@ const EditImage = ({ UploadedFiles }) => {
           onChange={handleSliderChange}
         />
 
+        <button
+          name="Download"
+          className={`med-link sidebar-item active`}
+          onClick={DownloadImage}
+          style={{ marginInline: "auto" }}
+        >
+          Download
+        </button>
         {/* <input
         type="range"
         className="slider"

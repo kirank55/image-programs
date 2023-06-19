@@ -156,8 +156,17 @@ a {
 .med-link.active, .med-link:hover {
     background-color: var(--dark);
     color: var(--sec-text);
+    transform: scale(1.25);
 }
 
+/* .med-link.active, .med-link:hover {
+    background-color: var(--dark);
+    color: var(--sec-text);
+} */
+blockquote{
+    padding: 10px;
+    font-weight: 800;
+}
 /* End ui css */
 
 

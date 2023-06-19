@@ -69,7 +69,13 @@ const Compress = (props) => {
         newfilearr = [...newfilearr, { uuid: uuidv4(), filedata: file }];
       }
 
-      setUploadedFiles((currentFiles) => [...currentFiles, ...newfilearr]);
+      // console.log(newfilearr)
+      // setUploadedFiles((currentFiles) => [...currentFiles, ...newfilearr]);
+      setUploadedFiles((currentFiles) => {
+        console.log([...currentFiles, ...newfilearr])
+       return [...currentFiles, ...newfilearr]
+      }
+       );
       console.log("file updated to UploadedFiles state");
     }
   }

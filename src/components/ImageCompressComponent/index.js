@@ -25,36 +25,46 @@ const ImageCompressComponent = () => {
     return;
   };
 
-  const handleCompressionlevel = level => {
-
-        setCompressionLevel(level)
-  }
+  const handleCompressionlevel = (level) => {
+    setCompressionLevel(level);
+  };
 
   return (
     <div className="converted-files">
+      <h3 style={{ textAlign: "center" }}>
+        100kb of Minimum Image size required.
+      </h3>
       <div className="convfileheading">
         <h2>Compression Level</h2>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <button
-            className={`med-link styled-corner-small ${CompressionLevel === 75 ? 'active' : ''}`  }
+          {/* <button
+            className={`med-link styled-corner-small ${
+              CompressionLevel === 75 ? "active" : ""
+            }`}
             onClick={() => handleCompressionlevel(75)}
           >
             Low
-          </button>
+          </button> */}
+
           <button
-            className={`med-link styled-corner-small ${CompressionLevel === 50 ? 'active' : ''}`  }
+            className={`med-link styled-corner-small ${
+              CompressionLevel === 50 && "active"
+            }`}
             onClick={() => handleCompressionlevel(50)}
           >
             Medium
           </button>
           <button
-            className={`med-link styled-corner-small ${CompressionLevel === 25 ? 'active' : ''}`  }
-            onClick={() => handleCompressionlevel(25)}
+            className={`med-link styled-corner-small ${
+              CompressionLevel === 100 && "active"
+            }`}
+            onClick={() => handleCompressionlevel(100)}
           >
             High
           </button>
         </div>
       </div>
+
       {UploadedFiles.length != 0 && (
         <div className="converted-files">
           <div className="convfileheading">
@@ -76,8 +86,7 @@ const ImageCompressComponent = () => {
           </div>
 
           <ol className="converted-files-list">
-
-          <ListofCompressedimages />
+            <ListofCompressedimages />
           </ol>
         </div>
       )}

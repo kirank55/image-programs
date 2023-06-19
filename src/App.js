@@ -82,15 +82,8 @@ function App() {
             </Suspense>
           }
         />
-        {/* <Route
-          exact
-          path="/editor/edit-image"
-          element={
-            <Suspense fallback={<GlobalLoader />}>
-              <EditImage />
-            </Suspense>
-          }
-        /> */}
+
+
         
 
 

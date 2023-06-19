@@ -63,7 +63,7 @@ const CompressedImageListitem = (props) => {
               <i className="fa-solid fa-file" />
             </span>
             <span className="filename">
-              compressed {file.name} from {file.originalSize} to {file.compressedSize}
+              {file.name} from <blockquote>{file.originalSize}</blockquote> to <blockquote>{file.compressedSize}</blockquote>
             </span>
 
             <div className="downloadimg">
@@ -149,6 +149,7 @@ async function image_to_base64(file) {
   });
   return result_base64;
 }
+
 const ListofCompressedimages = () => {
   const {
     UploadedFiles,
@@ -237,11 +238,11 @@ const ListofCompressedimages = () => {
         const checkForID = (obj) => obj.uuid === file.uuid;
 
         console.log(file);
-        // if (ConvertedFileData.some(checkForID)) {
-        //   console.log("data exists for" + file.filedata.name);
-        // } else {
+        if (Compressedimages.some(checkForID)) {
+          console.log("data exists for" + file.filedata.name);
+        } else {
         convertAndUpdate(file);
-        // }
+        }
       }
     }
 
