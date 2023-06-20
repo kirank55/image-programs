@@ -17,16 +17,19 @@ function Header() {
           <div className="navbar-menu-container mobile">
             <ul className="navbar-items">
               <li>
-                <Link to="/about">About Us</Link>
+                <Link to={"/converter"}>
+                  <span>Image Converter</span>
+                </Link>
               </li>
               <li>
-                <Link to="/privacy-policy">Privacy Policy</Link>
+                <Link to={"/compress"}>
+                  <span>Image Compressor</span>
+                </Link>
               </li>
               <li>
-                <Link to="/contact">Contact Us</Link>
-              </li>
-              <li>
-                <Link to="/sitemap">Sitemap</Link>
+                <Link to={"/editor"}>
+                  <span>Image Editor</span>
+                </Link>
               </li>
             </ul>
           </div>

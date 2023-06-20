@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import { FileContext } from "../../utilities/Context";
+import { v4 as uuidv4 } from "uuid";
 
-import ListofCompressedimages from "./ListofCompressedimages";
+import ListofCompressedimages from "./List";
+
 import "../ListOfConvertedFiles/list.css";
 
 const ImageCompressComponent = () => {
@@ -10,13 +12,12 @@ const ImageCompressComponent = () => {
     setUploadedFiles,
     CompressionLevel,
     setCompressionLevel,
-    // setZipStatus,
-    // setConvertedFileData,
+    setCompressedimages,
+    setZipStatus
   } = useContext(FileContext);
 
   const handleClearAllClick = () => {
     setUploadedFiles([]);
-    // setConvertedFileData([]);
   };
 
   const handleDownloadClick = () => {
@@ -25,40 +26,47 @@ const ImageCompressComponent = () => {
     return;
   };
 
-  const handleCompressionlevel = (level) => {
+  const handleCompressionlevel = level => {
+
     setCompressionLevel(level);
+
+    if (!UploadedFiles.length) return;
+
+    let tempfilearr = [];
+    for (const file of UploadedFiles) {
+      tempfilearr = [...tempfilearr, { uuid: uuidv4(), filedata: file.filedata }];
+    }
+
+    setCompressedimages([]);
+    setUploadedFiles(tempfilearr);
+
   };
 
   return (
     <div className="converted-files">
+      
       <h3 style={{ textAlign: "center" }}>
         100kb of Minimum Image size required.
       </h3>
+      
       <div className="convfileheading">
         <h2>Compression Level</h2>
+      
         <div style={{ display: "flex", justifyContent: "center" }}>
-          {/* <button
-            className={`med-link styled-corner-small ${
-              CompressionLevel === 75 ? "active" : ""
-            }`}
-            onClick={() => handleCompressionlevel(75)}
-          >
-            Low
-          </button> */}
 
           <button
             className={`med-link styled-corner-small ${
-              CompressionLevel === 50 && "active"
+              CompressionLevel === "medium" && "active"
             }`}
-            onClick={() => handleCompressionlevel(50)}
+            onClick={() => handleCompressionlevel("medium")}
           >
             Medium
           </button>
           <button
             className={`med-link styled-corner-small ${
-              CompressionLevel === 100 && "active"
+              CompressionLevel === "high" && "active"
             }`}
-            onClick={() => handleCompressionlevel(100)}
+            onClick={() => handleCompressionlevel("high")}
           >
             High
           </button>
@@ -67,22 +75,28 @@ const ImageCompressComponent = () => {
 
       {UploadedFiles.length != 0 && (
         <div className="converted-files">
+
           <div className="convfileheading">
+          
             <h2>Here's your compressed files</h2>
             <div style={{ display: "flex", justifyContent: "center" }}>
+              
               <button
                 className="med-link styled-corner-small"
                 onClick={handleClearAllClick}
               >
                 Clear All
               </button>
+
               <button
                 className="med-link styled-corner-small"
                 onClick={handleDownloadClick}
               >
                 Download All as Zip
               </button>
+            
             </div>
+          
           </div>
 
           <ol className="converted-files-list">

@@ -10,18 +10,13 @@ import { imageConverterRoutes } from "./utilities/routes";
 
 import "./app.css";
 
-// change your domain here to update SEO tags.
-window.domain = "https://" + window.location.host;
-
 function App() {
-  // Static pages
   const Home = lazy(() => import("./pages/static/Home"));
-  
-  // Dynamic pages
+
   const ImageConverter = lazy(() => import("./pages/dynamic/ImageConverter"));
   const Compress = lazy(() => import("./pages/dynamic/Compress"));
   const Editor = lazy(() => import("./pages/dynamic/Editor"));
-  // const EditImage = lazy(() => import("./pages/dynamic/Editor"));
+  const ImageConverterSitemap = lazy(() => import("./pages/static/Sitemap"));
 
   return (
     <div className="App">
@@ -30,7 +25,6 @@ function App() {
       <Header />
 
       <Routes>
-
         <Route
           exact
           path="/"
@@ -41,23 +35,17 @@ function App() {
           }
         />
 
+        {/* image converter */}
 
-        {/* Dynamic pages */}
-        {/* Array.map generates a List of react routes from the strings inside imageConverterRoutes array  */}
-        {/* https://react.dev/learn/rendering-lists */}
-
-        {imageConverterRoutes.map((route) => (
-          <Route
-            key={route}
-            path={route}
-            element={
-              <Suspense fallback={<GlobalLoader />}>
-                <ImageConverter />
-              </Suspense>
-            }
-          />
-        ))}
-
+        <Route
+          exact
+          path="/converter"
+          element={
+            <Suspense fallback={<GlobalLoader />}>
+              <ImageConverterSitemap />
+            </Suspense>
+          }
+        />
 
         {/* image compression */}
 
@@ -70,8 +58,6 @@ function App() {
             </Suspense>
           }
         />
-        
-
 
         <Route
           exact
@@ -83,10 +69,17 @@ function App() {
           }
         />
 
-
-        
-
-
+        {imageConverterRoutes.map((route) => (
+          <Route
+            key={route}
+            path={route}
+            element={
+              <Suspense fallback={<GlobalLoader />}>
+                <ImageConverter />
+              </Suspense>
+            }
+          />
+        ))}
       </Routes>
 
       <Footer />

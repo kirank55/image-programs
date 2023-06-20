@@ -34,29 +34,65 @@ const Home = () => {
         pageDesc={pageDesc}
       />
 
-<Link className="card-link styled-corner-small" to={"/compress"}>
+      {/* <Link className="card-link styled-corner-small" to={"/compress"}>
+        <span>Compress Image</span>
+      </Link> */}
 
-              <span>Compress Image</span>
-            </Link>
-<Link className="card-link styled-corner-small" to={"/editor"}>
-
-              <span>edit Image</span>
-            </Link>
+      {/* <Link className="card-link styled-corner-small" to={"/editor"}>
+        <span>edit Image</span>
+      </Link> */}
 
       <div className="md-container">
         <div className="homepage-content">
           <div className="intro-headline">
             <h2>Welcome to MinPrograms</h2>
             <p>
-              We offer a range of image conversion tools which are fast and
-              easy-to-use.
-              <br />
-              Simply Drag your image files and your required file is ready to
+              Click on any tool and Simply Drag your image files and your required file is ready to
               download.
             </p>
           </div>
 
           <div className="desc-content" style={{ display: "block" }}>
+            <div className="card-grid-container">
+              <div className="card-grid">
+
+                <div className="card-content">
+                  <Link
+                    className="card-link styled-corner-small"
+                    to={"/converter"}
+                  >
+                    <span>
+                      Image Converter
+                    </span>
+                  </Link>
+                </div>
+                <div className="card-content">
+                  <Link
+                    className="card-link styled-corner-small"
+                    to={"/compress"}
+                  >
+                    <span>
+                      Image Compressor
+                    </span>
+                  </Link>
+                </div>
+                <div className="card-content">
+                  <Link
+                    className="card-link styled-corner-small"
+                    to={"/editor"}
+                  >
+                    <span>
+                      Image Editor
+                    </span>
+                  </Link>
+                </div>
+            
+
+              </div>
+            </div>
+          </div>
+
+          {/* <div className="desc-content" style={{ display: "block" }}>
             <div className="card-grid-container">
               <h2>jpg converter</h2>
 
@@ -107,7 +143,7 @@ const Home = () => {
                 )}
               </div>
             </div>
-          </div>
+          </div> */}
 
           <p>
             Whether you're a designer, developer, or media manager, our site can

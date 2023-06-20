@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { imageConverterRoutes } from "../../utilities/routes";
 
-const Sitemap = () => {
+const ImageConverterSitemap = () => {
   useEffect(() => {
     console.log(imageConverterRoutes);
   });
@@ -29,4 +29,4 @@ const Sitemap = () => {
   );
 };
 
-export default Sitemap;
+export default ImageConverterSitemap;

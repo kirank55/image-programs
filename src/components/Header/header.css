@@ -25,7 +25,10 @@
     flex-direction: row;
     align-items: center;
 }
-
+.navbar-items a {
+    border: 1px solid #000;
+    padding: 10px;
+}
 .navbar-items li:not(:first-child) {
     margin-left: 0.8rem;
 }
