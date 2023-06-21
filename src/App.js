@@ -12,11 +12,11 @@ import "./app.css";
 
 function App() {
   const Home = lazy(() => import("./pages/static/Home"));
-
+  
   const ImageConverter = lazy(() => import("./pages/dynamic/ImageConverter"));
   const Compress = lazy(() => import("./pages/dynamic/Compress"));
   const Editor = lazy(() => import("./pages/dynamic/Editor"));
-  const ImageConverterSitemap = lazy(() => import("./pages/static/Sitemap"));
+  const Converter = lazy(() => import("./pages/dynamic/Converter"));
 
   return (
     <div className="App">
@@ -35,17 +35,7 @@ function App() {
           }
         />
 
-        {/* image converter */}
 
-        <Route
-          exact
-          path="/converter"
-          element={
-            <Suspense fallback={<GlobalLoader />}>
-              <ImageConverterSitemap />
-            </Suspense>
-          }
-        />
 
         {/* image compression */}
 
@@ -58,6 +48,20 @@ function App() {
             </Suspense>
           }
         />
+
+        {/* image converter */}
+
+        <Route
+          exact
+          path="/converter"
+          element={
+            <Suspense fallback={<GlobalLoader />}>
+              <Converter />
+            </Suspense>
+          }
+        />
+
+        {/* image Editor */}
 
         <Route
           exact

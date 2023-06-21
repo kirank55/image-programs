@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import HelmetComponent from "../../../components/Helmet";
-import { imageConverterRoutes } from "../../../utilities/routes";
+// import { imageConverterRoutes } from "../../../utilities/routes";
+
 import "./home.css";
 
 const Home = () => {
@@ -9,22 +10,7 @@ const Home = () => {
   const pageTitle = `Min Programs`;
   const pageDesc = `Home page of ${window.domain}`;
 
-  //  Loop through map and create a link if the 'to' extension jpg
-  const GetAllLinksRelatedTo = (extension, icon) =>
-    imageConverterRoutes.map(
-      (route) =>
-        route.toString().split("-")[2] === extension && (
-          <div className="card-content" key={route}>
-            <Link className="card-link styled-corner-small" to={"/" + route}>
-              <div>
-                <i className={icon} />
-              </div>
 
-              <span>Convert {route.toUpperCase().replace(/-/g, " ")}</span>
-            </Link>
-          </div>
-        )
-    );
 
   return (
     <div className="home">
@@ -53,8 +39,21 @@ const Home = () => {
           </div>
 
           <div className="desc-content" style={{ display: "block" }}>
+           
             <div className="card-grid-container">
+             
               <div className="card-grid">
+
+                <div className="card-content">
+                  <Link
+                    className="card-link styled-corner-small"
+                    to={"/compress"}
+                  >
+                    <span>
+                      Image Compressor
+                    </span>
+                  </Link>
+                </div>
 
                 <div className="card-content">
                   <Link
@@ -66,16 +65,7 @@ const Home = () => {
                     </span>
                   </Link>
                 </div>
-                <div className="card-content">
-                  <Link
-                    className="card-link styled-corner-small"
-                    to={"/compress"}
-                  >
-                    <span>
-                      Image Compressor
-                    </span>
-                  </Link>
-                </div>
+
                 <div className="card-content">
                   <Link
                     className="card-link styled-corner-small"
@@ -89,7 +79,9 @@ const Home = () => {
             
 
               </div>
+
             </div>
+            
           </div>
 
           {/* <div className="desc-content" style={{ display: "block" }}>

@@ -21,6 +21,9 @@
 .card-grid-container {
     margin: 3em 0;
 }
+.card-grid-container h2{
+    text-align: center;
+}
 
 .card-grid {
     display: grid;
