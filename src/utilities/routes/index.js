@@ -14,11 +14,7 @@ export const imageConverterRoutes = [
   "png-to-bmp",
   "png-to-jpg",
   "png-to-pdf",
-
-  // t
-  "tiff-to-bmp",
-  "tiff-to-jpg",
-  "tiff-to-png",
+ 
 ];
 
 

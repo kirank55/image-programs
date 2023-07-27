@@ -39,7 +39,7 @@ const Footer = () => {
               </li>
             </ul>
           </nav>
-          <p className="copyright">Copyright © 2023 — MinPrograms</p>
+          <p className="copyright">Copyright © 2023 — IMAGE PROGRAMS</p>
         </div>
       </div>
     </footer>

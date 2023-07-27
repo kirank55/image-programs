@@ -7,7 +7,7 @@ import "./home.css";
 
 const Home = () => {
   // Generate title and description of the page for SEO.
-  const pageTitle = `Min Programs`;
+  const pageTitle = `IMAGE PROGRAMS`;
   const pageDesc = `Home page of ${window.domain}`;
 
 
@@ -31,7 +31,7 @@ const Home = () => {
       <div className="md-container">
         <div className="homepage-content">
           <div className="intro-headline">
-            <h2>Welcome to MinPrograms</h2>
+            <h2>Welcome to IMAGE PROGRAMS</h2>
             <p>
               Click on any tool and Simply Drag your image files and your required file is ready to
               download.

@@ -7,11 +7,12 @@ function Header() {
       <nav className="navbar-menu">
         <div className="navbar-wrapper container">
           <a href="/" className="navbar-brand">
-            <img
+            {/* <img
               src="assets/logo.svg"
               style={{ height: "100px", width: "200px" }}
               alt="minprograms"
-            />
+            /> */}
+            <h3>IMAGE PROGRAMS</h3>
           </a>
 
           <div className="navbar-menu-container mobile">
