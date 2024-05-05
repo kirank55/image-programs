@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-
+ 
 import { imageConverterRoutes } from "../../utilities/routes";
 import "../static/Home/home.css"
 const Converter = () => {
@@ -12,7 +12,8 @@ const Converter = () => {
     imageConverterRoutes.map(
       (route) =>
         route.toString().split("-")[2] === extension && (
-          <div className="card-content" key={route}>
+          <div className={`card-content ${extension}`} key={route} >
+            
             <Link className="card-link styled-corner-small" to={"/" + route}>
               <div>
                 <i className={icon} />
@@ -33,7 +34,7 @@ const Converter = () => {
             <div className="card-grid-container">
               <h2>Convert To JPG </h2>
 
-              <div className="card-grid">
+              <div className="card-grid jpg-grid">
                 {GetAllLinksRelatedTo(
                   "jpg",
                   "fa-solid fa-light fa-image fa-2x"
@@ -44,7 +45,7 @@ const Converter = () => {
             <div className="card-grid-container">
               <h2>Convert To PDF</h2>
 
-              <div className="card-grid">
+              <div className="card-grid pdf-grid">
                 {GetAllLinksRelatedTo("pdf", "fa-solid fa-file-pdf fa-2x")}
               </div>
             </div>
@@ -52,7 +53,7 @@ const Converter = () => {
             <div className="card-grid-container">
               <h2>Convert To PNG</h2>
 
-              <div className="card-grid">
+              <div className="card-grid png-grid">
                 {GetAllLinksRelatedTo(
                   "png",
                   "fa-solid fa-light fa-image fa-2x"
@@ -63,7 +64,7 @@ const Converter = () => {
             <div className="card-grid-container">
               <h2>Convert To BMP</h2>
 
-              <div className="card-grid">
+              <div className="card-grid bmp-grid">
                 {GetAllLinksRelatedTo(
                   "bmp",
                   "fa-solid fa-light fa-image fa-2x"

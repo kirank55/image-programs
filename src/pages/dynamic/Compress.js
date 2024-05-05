@@ -73,7 +73,7 @@ const Compress = () => {
         <ol type="1" style={{
           maxWidth: '35px',
           marginInline: 'auto',
-          fontSize: '1.5em'
+          fontSize: '1.5em' 
         }}>
           <li>JPG</li>
           <li>PNG</li>

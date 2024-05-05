@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { DEFAULT_OPTIONS } from "./options";
+import { Link } from "react-router-dom";
 
 
 const EditImage = ({ UploadedFiles }) => {
@@ -85,6 +86,7 @@ const EditImage = ({ UploadedFiles }) => {
                     onChange={handleSliderChange}
                 />
 
+
                 <button
                     name="Download"
                     className={`med-link sidebar-item active`}
@@ -95,6 +97,15 @@ const EditImage = ({ UploadedFiles }) => {
                 </button>
 
             </div>
+
+            <a
+                    name="Download"
+                    className={`med-link sidebar-item`}
+                    style={{ marginInline: "auto" }}
+                    href={"/editor"}
+                >
+                    Try Another image
+                </a>
         </div>
     );
 };

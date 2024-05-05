@@ -25,10 +25,21 @@
     text-align: center;
 }
 
+
 .card-grid {
     display: grid;
     grid-template-columns: auto auto auto;
 }
+.jpg-grid,.png-grid,.bmp-grid{
+    display: flex;
+    justify-content: center;
+}
+
+.pdf-grid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
 
 .card-grid .card-content {
     display: grid;
@@ -59,11 +70,15 @@
     transition: 0.15s all ease-in-out;
 }
 
-.card-content .card-link:hover {
-
+.card-content .card-link:hover  {
     background-color: var(--dark-border);
     color: var(--sec-text);
 }
+
+.card-content .card-link:hover > svg *{
+    stroke: var(--sec-text);    
+}
+
 
 .card-content .card-link div {
     margin: 0 0.5rem;
@@ -89,6 +104,10 @@
 
 
 @media (max-width:700px) {
+    
+    .jpg-grid,.png-grid,.bmp-grid{
+        flex-direction: column;
+    }
     .card-grid {
         grid-template-columns: auto;
     }

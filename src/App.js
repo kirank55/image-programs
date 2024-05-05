@@ -13,10 +13,10 @@ import "./app.css";
 function App() {
   const Home = lazy(() => import("./pages/static/Home"));
   
-  const ImageConverter = lazy(() => import("./pages/dynamic/ImageConverter"));
   const Compress = lazy(() => import("./pages/dynamic/Compress"));
   const Editor = lazy(() => import("./pages/dynamic/Editor"));
   const Converter = lazy(() => import("./pages/dynamic/Converter"));
+  const ImageConverter = lazy(() => import("./pages/dynamic/ImageConverter"));
 
   return (
     <div className="App">
